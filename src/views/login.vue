@@ -1,0 +1,13 @@
+<!-- 展示用户存储对象中的名称属性 -->
+<template>
+    <div>{{ userStore.name }}</div> <!--展示userStore对象中的name属性-->
+</template>
+
+<script lang="ts" setup>
+import { useUserStore } from '@/store/user'
+
+const userStore = useUserStore()  // 调用这个函数来获取用户存储对象
+userStore.updateName('李四') //修改
+</script>
+
+ 
