@@ -12,15 +12,12 @@ export default defineConfig({
     },
     plugins: [vue()],
     server: { // 用于配置开发服务器的选项
+        host: '0.0.0.0',
         port: 8080, //启动端口
-        hmr: {
-            host: '127.0.0.1',
-            port: 8080
-        },
         // 设置 https 代理
         proxy: {
             '/api': { // 匹配所有以 /api 开头的请求
-                target: 'your https address',
+                target: 'http://localhost:3000',
                 changeOrigin: true,
                 rewrite: (path: string) => path.replace(/^\/api/, '')  // 将路径中以 /api 开头的部分替换为空字符串，以便正确代理请求
             }

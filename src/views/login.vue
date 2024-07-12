@@ -5,9 +5,16 @@
 
 <script lang="ts" setup>
 import { useUserStore } from '@/store/user'
+import { userList } from '@/api/api'
 
 const userStore = useUserStore()  // 调用这个函数来获取用户存储对象
-userStore.updateName('李四') //修改
+const fetUser = async() => {
+    let res = await userList()
+    // console.log( "***" ,res);
+    userStore.updateName(res.name)
+}
+
+fetUser()
 </script>
 
  
