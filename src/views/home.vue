@@ -1,6 +1,8 @@
 <!-- 展示用户存储对象中的名称属性 -->
 <template>
-    <div>{{ userStore.name }}</div> <!--展示userStore对象中的name属性-->
+     <el-row>
+        <el-button type="primary" size="large">Large</el-button>
+     </el-row>
 </template>
 
 <script lang="ts" setup>

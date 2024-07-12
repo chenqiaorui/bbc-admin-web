@@ -28,4 +28,20 @@ const router = createRouter({
     routes  // 将上面定义的 routes 数组传递给 createRouter 函数,作为路由配
 });   
 
+
+router.beforeEach((to,from,next)=>{
+    // console.log(to, from); 
+    if(to.path != '/'){
+        next()
+        const isLogin = localStorage.getItem('isLogin')
+        if(isLogin){
+            next()
+        }else{
+            alert('未登录')
+            return 
+        }
+    } 
+    next()
+})
+
 export default router;  // 导出创建的路由实例,供应用程序其他部分使用

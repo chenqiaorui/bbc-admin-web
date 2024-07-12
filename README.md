@@ -13,4 +13,8 @@ npm i @types/node --save-dev
 
 npm i pinia --save
 
+## element-plus
+
+npm install element-plus --save
+
 
