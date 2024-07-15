@@ -17,4 +17,7 @@ npm i pinia --save
 
 npm install element-plus --save
 
+## sass
+npm install sass sass-loader --save-dev
+
 

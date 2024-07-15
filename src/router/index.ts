@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [  // 定义一个名为 routes 的常量�
         keepAlive: true,
         requireAuth: false
     },
-    component: () => import('@/views/login.vue')   // 要渲染的组件。这里使用了动态导入 () => import('@/views/login.vue') 的方式,在需要时才会加载组件
+    component: () => import('@/views/login/index.vue')   // 要渲染的组件。这里使用了动态导入 () => import('@/views/login.vue') 的方式,在需要时才会加载组件
 },
 {
     path: '/',
@@ -29,19 +29,19 @@ const router = createRouter({
 });   
 
 
-router.beforeEach((to,from,next)=>{
-    // console.log(to, from); 
-    if(to.path != '/'){
-        next()
-        const isLogin = localStorage.getItem('isLogin')
-        if(isLogin){
-            next()
-        }else{
-            alert('未登录')
-            return 
-        }
-    } 
-    next()
-})
+// router.beforeEach((to,from,next)=>{
+//     // console.log(to, from); 
+//     if(to.path != '/'){
+//         next()
+//         const isLogin = localStorage.getItem('isLogin')
+//         if(isLogin){
+//             next()
+//         }else{
+//             alert('未登录')
+//             return 
+//         }
+//     } 
+//     next()
+// })
 
 export default router;  // 导出创建的路由实例,供应用程序其他部分使用
